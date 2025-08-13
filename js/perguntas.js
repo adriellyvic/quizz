@@ -1,103 +1,103 @@
-export const perguntasCorinthians = [
+    export const perguntasCorinthians = [
     {
-        enunciado: "Estamos em 2026 e o Corinthians está prestes a iniciar uma nova era. A diretoria precisa decidir o foco para a temporada. Qual caminho seguir?",
+        enunciado: "O ano é 2026. O Corinthians está se preparando para uma nova temporada e precisa definir sua prioridade. Qual caminho seguir?",
         alternativas: [
             {
-                texto: "Investir pesado em contratações de peso para buscar títulos imediatos.",
+                texto: "Investir pesado em contratações para conquistar títulos imediatos.",
                 afirmacao: [
-                    "Acredita que grandes contratações podem trazer resultados rápidos.",
-                    "Quer ver o Corinthians novamente no topo do futebol brasileiro e mundial."
+                    "Acredita que o Corinthians precisa voltar ao topo rapidamente.",
+                    "Quer ver craques de renome vestindo a camisa alvinegra."
                 ],
                 proxima: 1,
             },
             {
-                texto: "Focar na base e formar um elenco com jovens talentos.",
+                texto: "Apostar na base e construir um elenco com jovens promissores.",
                 afirmacao: [
-                    "Acredita que investir na base garante um futuro sustentável.",
-                    "Quer ver novos ídolos surgindo e defendendo o manto alvinegro."
+                    "Acredita que o futuro do Timão está nas categorias de base.",
+                    "Quer ver novos ídolos surgindo no clube."
                 ],
                 proxima: 2,
             },
         ]
     },
     {
-        enunciado: "O clube recebeu uma proposta para vender um de seus jovens craques revelados na base por um valor recorde. O que fazer?",
+        enunciado: "Com o elenco estrelado, surge um problema: a folha salarial está alta e um clube europeu oferece milhões por um craque. O que fazer?",
         alternativas: [
             {
-                texto: "Vender para reforçar o caixa e contratar jogadores experientes.",
+                texto: "Aceitar a venda e reforçar o caixa do clube.",
                 afirmacao: [
-                    "Pensa que a saúde financeira do clube é prioridade.",
-                    "Acredita que jogadores experientes podem decidir jogos importantes."
+                    "Acredita que a saúde financeira deve vir antes de tudo.",
+                    "Quer usar o dinheiro para equilibrar as contas e investir de forma inteligente."
                 ],
                 proxima: 3,
             },
             {
-                texto: "Recusar a venda e manter o craque no elenco.",
+                texto: "Recusar a proposta e manter o jogador no elenco.",
                 afirmacao: [
-                    "Acredita que manter craques é fundamental para o sucesso em campo.",
-                    "Prefere ver o jogador se consolidar como ídolo do clube."
+                    "Quer ver o jogador se consolidar como ídolo do Timão.",
+                    "Acredita que títulos vêm com elenco forte e unido."
+                ],
+                proxima: 3,
+            },
+        ]
+    },
+    {
+        enunciado: "O Corinthians volta à Libertadores e precisa definir o estilo de jogo. Qual escolher?",
+        alternativas: [
+            {
+                texto: "Futebol ofensivo e ousado, buscando sempre o ataque.",
+                afirmacao: [
+                    "Quer ver o Corinthians encantar e dominar os adversários.",
+                    "Prefere jogos cheios de gols e emoção."
+                ],
+                proxima: 4,
+            },
+            {
+                texto: "Futebol sólido e estratégico, priorizando a defesa.",
+                afirmacao: [
+                    "Acredita que a defesa é a base para títulos.",
+                    "Prefere vitórias seguras e consistentes."
                 ],
                 proxima: 4,
             },
         ]
     },
     {
-        enunciado: "O Corinthians está de volta à Libertadores e precisa definir o estilo de jogo. Qual escolha fazer?",
+        enunciado: "Há um projeto para ampliar e modernizar a Neo Química Arena. Qual sua opinião?",
         alternativas: [
             {
-                texto: "Futebol ofensivo e envolvente, buscando sempre atacar.",
+                texto: "Aprovar a ampliação para receber mais torcedores e eventos.",
                 afirmacao: [
-                    "Acredita que o Corinthians deve jogar para encantar e dominar os adversários.",
-                    "Prefere jogos cheios de gols e emoção."
+                    "Quer transformar a arena em uma das maiores do mundo.",
+                    "Acredita que isso trará mais receita e visibilidade."
                 ],
                 proxima: 5,
             },
             {
-                texto: "Futebol sólido e defensivo, priorizando a segurança.",
+                texto: "Manter como está e investir o dinheiro no elenco.",
                 afirmacao: [
-                    "Acredita que a defesa é a base para conquistar títulos.",
-                    "Prefere ganhar de forma estratégica e consistente."
+                    "Prefere priorizar resultados em campo antes da infraestrutura.",
+                    "Acredita que títulos são o melhor marketing."
                 ],
                 proxima: 5,
             },
         ]
     },
     {
-        enunciado: "A Neo Química Arena tem proposta para ampliação e modernização. Qual sua opinião?",
+        enunciado: "O Corinthians chegou à final do Mundial de Clubes contra um gigante europeu. Qual estratégia adotar?",
         alternativas: [
             {
-                texto: "Ampliar para receber mais torcedores e eventos internacionais.",
+                texto: "Jogar de igual para igual e mostrar a força do futebol brasileiro.",
                 afirmacao: [
-                    "Quer ver a arena como uma das maiores e mais modernas do mundo.",
-                    "Acredita que isso atrairá mais receitas e fortalecerá o clube."
-                ],
-                proxima: 5,
-            },
-            {
-                texto: "Manter como está e investir o dinheiro em reforços para o time.",
-                afirmacao: [
-                    "Acredita que o foco principal deve ser o desempenho em campo.",
-                    "Prefere ver títulos antes de grandes reformas."
-                ],
-                proxima: 5,
-            },
-        ]
-    },
-    {
-        enunciado: "O Corinthians está no Mundial de Clubes contra um gigante europeu. Qual a estratégia?",
-        alternativas: [
-            {
-                texto: "Jogar de igual para igual, mostrando a força do futebol brasileiro.",
-                afirmacao: [
-                    "Confia no elenco e quer ver o Corinthians impor seu jogo.",
-                    "Acredita que coragem e ousadia podem surpreender o adversário."
+                    "Confia no elenco e quer impor o estilo do Timão.",
+                    "Acredita que ousadia pode trazer a glória."
                 ],
             },
             {
-                texto: "Adotar uma postura cautelosa e explorar contra-ataques.",
+                texto: "Adotar postura cautelosa e explorar contra-ataques.",
                 afirmacao: [
-                    "Prefere uma abordagem estratégica para neutralizar o rival.",
-                    "Acredita que a paciência pode levar à vitória."
+                    "Prefere um jogo estratégico para surpreender o adversário.",
+                    "Acredita que paciência e disciplina trazem vitórias."
                 ],
             },
         ]
