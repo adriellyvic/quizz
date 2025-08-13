@@ -35,10 +35,7 @@ function mostrarPergunta(indice) {
     textoPergunta.textContent = pergunta.enunciado;
     caixaAlternativas.innerHTML = "";
 
-    // Embaralhar alternativas
-    const alternativasEmbaralhadas = embaralhar(pergunta.alternativas);
-
-    alternativasEmbaralhadas.forEach((alternativa) => {
+    pergunta.alternativas.forEach((alternativa) => {
         const botao = document.createElement("button");
         botao.textContent = alternativa.texto;
         botao.addEventListener("click", () => selecionarAlternativa(alternativa));
