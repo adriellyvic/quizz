@@ -1,98 +1,105 @@
-export const perguntas = [
+export const perguntasCorinthians = [
     {
-        
-        enunciado: "Em 2026, a Fórmula 1 vai usar combustíveis 100% sustentáveis e motores híbridos mais potentes. Como você reage a essa mudança?",
+        enunciado: "Estamos em 2026 e o Corinthians está prestes a iniciar uma nova era. A diretoria precisa decidir o foco para a temporada. Qual caminho seguir?",
         alternativas: [
             {
-                texto: "Isso é ótimo para o planeta e para o esporte!",
+                texto: "Investir pesado em contratações de peso para buscar títulos imediatos.",
                 afirmacao: [
-                    "Você apoiou a transição para combustíveis sustentáveis.",
-                    "Você comemorou o avanço da tecnologia verde nos motores."
+                    "Acredita que grandes contratações podem trazer resultados rápidos.",
+                    "Quer ver o Corinthians novamente no topo do futebol brasileiro e mundial."
                 ],
-                proxima: 1
+                proxima: 1,
             },
             {
-                texto: "Tenho receio que isso afete a velocidade dos carros.",
+                texto: "Focar na base e formar um elenco com jovens talentos.",
                 afirmacao: [
-                    "Você ficou preocupado com a perda de desempenho.",
-                    "Você achou que a emoção das corridas poderia diminuir."
+                    "Acredita que investir na base garante um futuro sustentável.",
+                    "Quer ver novos ídolos surgindo e defendendo o manto alvinegro."
                 ],
-                proxima: 1
-            }
+                proxima: 2,
+            },
         ]
     },
     {
-        enunciado: "As novas regras aerodinâmicas de 2026 prometem mais ultrapassagens. O que você acha disso?",
+        enunciado: "O clube recebeu uma proposta para vender um de seus jovens craques revelados na base por um valor recorde. O que fazer?",
         alternativas: [
             {
-                texto: "Mais ação deixa as corridas mais emocionantes!",
+                texto: "Vender para reforçar o caixa e contratar jogadores experientes.",
                 afirmacao: [
-                    "Você se animou com a promessa de mais disputas na pista."
+                    "Pensa que a saúde financeira do clube é prioridade.",
+                    "Acredita que jogadores experientes podem decidir jogos importantes."
                 ],
-                proxima: 2
+                proxima: 3,
             },
             {
-                texto: "Prefiro que a estratégia continue sendo mais importante.",
+                texto: "Recusar a venda e manter o craque no elenco.",
                 afirmacao: [
-                    "Você achou que muitas ultrapassagens tiram a importância da tática."
+                    "Acredita que manter craques é fundamental para o sucesso em campo.",
+                    "Prefere ver o jogador se consolidar como ídolo do clube."
                 ],
-                proxima: 2
-            }
+                proxima: 4,
+            },
         ]
     },
     {
-        enunciado: "A Audi estreia como equipe oficial em 2026. Qual é a sua expectativa?",
+        enunciado: "O Corinthians está de volta à Libertadores e precisa definir o estilo de jogo. Qual escolha fazer?",
         alternativas: [
             {
-                texto: "Eles vão brigar pelo pódio desde a primeira corrida!",
+                texto: "Futebol ofensivo e envolvente, buscando sempre atacar.",
                 afirmacao: [
-                    "Você apostou que a Audi será competitiva logo no início."
+                    "Acredita que o Corinthians deve jogar para encantar e dominar os adversários.",
+                    "Prefere jogos cheios de gols e emoção."
                 ],
-                proxima: 3
+                proxima: 5,
             },
             {
-                texto: "Vai levar alguns anos até serem realmente fortes.",
+                texto: "Futebol sólido e defensivo, priorizando a segurança.",
                 afirmacao: [
-                    "Você achou que a Audi precisará de tempo para alcançar as líderes."
+                    "Acredita que a defesa é a base para conquistar títulos.",
+                    "Prefere ganhar de forma estratégica e consistente."
                 ],
-                proxima: 3
-            }
+                proxima: 5,
+            },
         ]
     },
     {
-        enunciado: "As equipes terão que lidar com limites de orçamento cada vez mais rígidos. Como você vê isso?",
+        enunciado: "A Neo Química Arena tem proposta para ampliação e modernização. Qual sua opinião?",
         alternativas: [
             {
-                texto: "Vai deixar as equipes mais equilibradas.",
+                texto: "Ampliar para receber mais torcedores e eventos internacionais.",
                 afirmacao: [
-                    "Você gostou da ideia de ver corridas menos previsíveis."
+                    "Quer ver a arena como uma das maiores e mais modernas do mundo.",
+                    "Acredita que isso atrairá mais receitas e fortalecerá o clube."
                 ],
-                proxima: 4
+                proxima: 5,
             },
             {
-                texto: "Pode prejudicar as grandes equipes e a inovação.",
+                texto: "Manter como está e investir o dinheiro em reforços para o time.",
                 afirmacao: [
-                    "Você achou que o limite de orçamento pode frear o desenvolvimento."
+                    "Acredita que o foco principal deve ser o desempenho em campo.",
+                    "Prefere ver títulos antes de grandes reformas."
                 ],
-                proxima: 4
-            }
+                proxima: 5,
+            },
         ]
     },
     {
-        enunciado: "Com novas tecnologias, a F1 de 2026 pode atrair mais jovens fãs e expandir para novos países. O que você acha?",
+        enunciado: "O Corinthians está no Mundial de Clubes contra um gigante europeu. Qual a estratégia?",
         alternativas: [
             {
-                texto: "É ótimo ver a F1 conquistando novos públicos!",
+                texto: "Jogar de igual para igual, mostrando a força do futebol brasileiro.",
                 afirmacao: [
-                    "Você achou importante que a Fórmula 1 se torne mais global e acessível."
-                ]
+                    "Confia no elenco e quer ver o Corinthians impor seu jogo.",
+                    "Acredita que coragem e ousadia podem surpreender o adversário."
+                ],
             },
             {
-                texto: "Prefiro manter a tradição e focar nos circuitos clássicos.",
+                texto: "Adotar uma postura cautelosa e explorar contra-ataques.",
                 afirmacao: [
-                    "Você defendeu que a F1 preserve seus circuitos históricos."
-                ]
-            }
+                    "Prefere uma abordagem estratégica para neutralizar o rival.",
+                    "Acredita que a paciência pode levar à vitória."
+                ],
+            },
         ]
     }
 ];
