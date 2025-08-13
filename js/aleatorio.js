@@ -1,9 +1,6 @@
-// Função para embaralhar um array
-export function embaralhar(array) {
-    let copia = [...array];
-    for (let i = copia.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [copia[i], copia[j]] = [copia[j], copia[i]];
-    }
-    return copia;
+// Lista de nomes e função para sortear um aleatório
+const nomes = ["Périola", "Joacir", "Otavio", "Franciele", "Adrielly", "Victória", "Gabriel"];
+function aleatorio(lista) {
+    return lista[Math.floor(Math.random() * lista.length)];
 }
+const nome = aleatorio(nomes);
