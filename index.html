@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História Interativa</title>
     <link rel="stylesheet" href="style.css">
-    <title>Você decide o futuro da IA</title>
 </head>
-
 <body>
-    <div class="caixa-principal">
-        <h1>Você decide o futuro da Formula 1</h1>
-        <div class="tela-inicial">
-            <p>Em 2026, o Corinthians enfrenta decisões que podem mudar sua história. Cabe a você escolher entre investir em grandes contratações ou apostar na base, jogar de forma ofensiva ou manter a defesa sólida, e expandir a Neo Química Arena ou focar no elenco. Suas escolhas definirão se o clube alcançará glórias ou seguirá um novo rumo.
-            </p>
-            <button class="iniciar-btn">Iniciar</button>
-        </div>
+
+    <!-- Tela inicial -->
+    <div class="tela-inicial">
+        <h1>Bem-vindo ao jogo</h1>
+        <button class="iniciar-btn">Iniciar</button>
+    </div>
+
+    <!-- Caixa do jogo -->
+    <div class="caixa-principal" style="display:none;">
         <div class="caixa-perguntas"></div>
         <div class="caixa-alternativas"></div>
         <div class="caixa-resultado">
@@ -23,10 +23,7 @@
             <button class="novamente-btn">Jogar novamente</button>
         </div>
     </div>
-    <script type="module" src="js/aleatorio.js"></script>
-    <script type="module" src="js/perguntas.js"></script>
-    <script type="module" src="js/script.js"></script>
+
+    <script src="main.js" defer></script>
 </body>
-
 </html>
-
