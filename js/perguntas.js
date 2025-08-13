@@ -1,4 +1,4 @@
-    export const perguntasCorinthians = [
+export const perguntasCorinthians = [
     {
         enunciado: "O ano é 2026. O Corinthians está se preparando para uma nova temporada e precisa definir sua prioridade. Qual caminho seguir?",
         alternativas: [
