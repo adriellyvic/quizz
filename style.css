@@ -3,9 +3,9 @@
 :root {
     --cor-fundo: #000000;
     --cor-principal: #2c2c2c ;
-    --cor-secundaria: #FFFFFF;
+    --cor-secundaria: #000000;
     --cor-destaque: #C00000;
-    --cor-texto: #000000;
+    --cor-texto: #FFFFFF;
 }
   
 body {
