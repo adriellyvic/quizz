@@ -1,32 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Você Decide o Futuro do Corinthians</title>
     <link rel="stylesheet" href="style.css">
-    <title>Você decide o futuro da IA</title>
 </head>
-
 <body>
-    <div class="caixa-principal">
+    <div class="caixa-inicial">
         <h1>Você Decide o Futuro do Corinthians</h1>
-        <div class="tela-inicial">
-            <p>Em 2026, o Corinthians enfrenta decisões que podem mudar sua história. Cabe a você escolher entre investir em grandes contratações ou apostar na base, jogar de forma ofensiva ou manter a defesa sólida, e expandir a Neo Química Arena ou focar no elenco. Suas escolhas definirão se o clube alcançará glórias ou seguirá um novo rumo.
-            </p>
-            <button class="iniciar-btn">Iniciar</button>
-        </div>
-        <div class="caixa-perguntas"></div>
-        <div class="caixa-alternativas"></div>
-        <div class="caixa-resultado">
-            <p class="texto-resultado"></p>
-            <button class="novamente-btn">Jogar novamente</button>
-        </div>
+        <button id="botao-iniciar">Iniciar</button>
     </div>
-    <script type="module" src="js/aleatorio.js"></script>
-    <script type="module" src="js/perguntas.js"></script>
-    <script type="module" src="js/script.js"></script>
+
+    <div class="caixa-principal caixa-perguntas" style="display:none;">
+        <p id="texto-pergunta"></p>
+        <div class="caixa-alternativas"></div>
+    </div>
+
+    <div class="caixa-principal caixa-resultado" style="display:none;">
+        <div id="texto-resultado"></div>
+        <button id="botao-reiniciar">Reiniciar</button>
+    </div>
+
+    <script type="module" src="script.js"></script>
 </body>
-
 </html>
-
