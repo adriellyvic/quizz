@@ -1,82 +1,72 @@
-import { aleatorio, nome } from './aleatorio.js';
-import { perguntas } from './perguntas.js';
+import { perguntasCorinthians } from "./perguntas.js";
+import { embaralhar } from "./aleatorio.js";
 
-const caixaPrincipal = document.querySelector(".caixa-principal");
+const botaoIniciar = document.getElementById("botao-iniciar");
+const botaoReiniciar = document.getElementById("botao-reiniciar");
+const caixaInicial = document.querySelector(".caixa-inicial");
 const caixaPerguntas = document.querySelector(".caixa-perguntas");
-const caixaAlternativas = document.querySelector(".caixa-alternativas");
 const caixaResultado = document.querySelector(".caixa-resultado");
-const textoResultado = document.querySelector(".texto-resultado");
-const botaoJogarNovamente = document.querySelector(".novamente-btn");
-const botaoIniciar = document.querySelector(".iniciar-btn");
-const telaInicial = document.querySelector(".tela-inicial");
+const textoPergunta = document.getElementById("texto-pergunta");
+const caixaAlternativas = document.querySelector(".caixa-alternativas");
+const textoResultado = document.getElementById("texto-resultado");
 
-let atual = 0;
-let perguntaAtual;
-let historiaFinal = "";
+let indiceAtual = 0;
+let afirmacoes = [];
 
-botaoIniciar.addEventListener('click', iniciaJogo);
+// Iniciar quiz
+botaoIniciar.addEventListener("click", () => {
+    indiceAtual = 0;
+    afirmacoes = [];
+    caixaInicial.style.display = "none";
+    caixaResultado.style.display = "none";
+    caixaPerguntas.style.display = "block";
+    mostrarPergunta(indiceAtual);
+});
 
-function iniciaJogo() {
-    atual = 0;
-    historiaFinal = "";
-    telaInicial.style.display = 'none';
-    caixaPerguntas.classList.remove("mostrar");
-    caixaAlternativas.classList.remove("mostrar");
-    caixaResultado.classList.remove("mostrar");
-    mostraPergunta();
+// Reiniciar quiz
+botaoReiniciar.addEventListener("click", () => {
+    caixaResultado.style.display = "none";
+    caixaInicial.style.display = "block";
+});
+
+// Mostrar pergunta
+function mostrarPergunta(indice) {
+    const pergunta = perguntasCorinthians[indice];
+    textoPergunta.textContent = pergunta.enunciado;
+    caixaAlternativas.innerHTML = "";
+
+    // Embaralhar alternativas
+    const alternativasEmbaralhadas = embaralhar(pergunta.alternativas);
+
+    alternativasEmbaralhadas.forEach((alternativa) => {
+        const botao = document.createElement("button");
+        botao.textContent = alternativa.texto;
+        botao.addEventListener("click", () => selecionarAlternativa(alternativa));
+        caixaAlternativas.appendChild(botao);
+    });
 }
 
-function mostraPergunta() {
-    if (atual >= perguntas.length) {
-        mostraResultado();
-        return;
-    }
-    perguntaAtual = perguntas[atual];
-    caixaPerguntas.textContent = perguntaAtual.enunciado;
-    caixaAlternativas.textContent = "";
-    mostraAlternativas();
-}
+// Selecionar alternativa
+function selecionarAlternativa(alternativa) {
+    afirmacoes.push(...alternativa.afirmacao);
 
-function mostraAlternativas() {
-    for (const alternativa of perguntaAtual.alternativas) {
-        const botaoAlternativas = document.createElement("button");
-        botaoAlternativas.textContent = alternativa.texto;
-        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
-        caixaAlternativas.appendChild(botaoAlternativas);
-    }
-}
-
-function respostaSelecionada(opcaoSelecionada) {
-    const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
-    historiaFinal += afirmacoes + " ";
-    if (opcaoSelecionada.proxima !== undefined) {
-        atual = opcaoSelecionada.proxima;
+    if (alternativa.proxima !== undefined) {
+        indiceAtual = alternativa.proxima;
+        mostrarPergunta(indiceAtual);
     } else {
-        mostraResultado();
-        return;
-    }
-    mostraPergunta();
-}
-
-function mostraResultado() {
-    caixaPerguntas.textContent = `Em 2049, ${nome}`;
-    textoResultado.textContent = historiaFinal;
-    caixaAlternativas.textContent = "";
-    caixaResultado.classList.add("mostrar");
-    botaoJogarNovamente.addEventListener("click", jogaNovamente);
-}
-
-function jogaNovamente() {
-    atual = 0;
-    historiaFinal = "";
-    caixaResultado.classList.remove("mostrar");
-    mostraPergunta();
-}
-
-function substituiNome() {
-    for (const pergunta of perguntas) {
-        pergunta.enunciado = pergunta.enunciado.replace(/você/g, nome);
+        mostrarResultado();
     }
 }
 
-substituiNome();
+// Mostrar resultado final
+function mostrarResultado() {
+    caixaPerguntas.style.display = "none";
+    caixaResultado.style.display = "block";
+
+    textoResultado.innerHTML = `
+        <h2>Você decidiu o futuro do Corinthians!</h2>
+        <ul>
+            ${afirmacoes.map(item => `<li>${item}</li>`).join("")}
+        </ul>
+    `;
+}
