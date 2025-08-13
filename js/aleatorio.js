@@ -1,6 +1,8 @@
-// Lista de nomes e função para sortear um aleatório
 const nomes = ["Périola", "Joacir", "Otavio", "Franciele", "Adrielly", "Victória", "Gabriel"];
-function aleatorio(lista) {
-    return lista[Math.floor(Math.random() * lista.length)];
+
+export function aleatorio (lista){
+    const posicao = Math.floor(Math.random()* lista.length);
+    return lista[posicao];
 }
-const nome = aleatorio(nomes);
+
+export const nome = aleatorio(nomes)

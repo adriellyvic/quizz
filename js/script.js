@@ -1,75 +1,82 @@
-import { perguntasCorinthians } from "./perguntas.js";
-import { embaralhar } from "./aleatorio.js";
+import { aleatorio, nome } from './aleatorio.js';
+import { perguntas } from './perguntas.js';
 
-// Seletores de elementos
-const telaInicial = document.querySelector(".tela-inicial");
-const botaoIniciar = document.querySelector(".iniciar-btn");
 const caixaPrincipal = document.querySelector(".caixa-principal");
 const caixaPerguntas = document.querySelector(".caixa-perguntas");
 const caixaAlternativas = document.querySelector(".caixa-alternativas");
 const caixaResultado = document.querySelector(".caixa-resultado");
 const textoResultado = document.querySelector(".texto-resultado");
 const botaoJogarNovamente = document.querySelector(".novamente-btn");
+const botaoIniciar = document.querySelector(".iniciar-btn");
+const telaInicial = document.querySelector(".tela-inicial");
 
 let atual = 0;
+let perguntaAtual;
 let historiaFinal = "";
 
-// Substitui "você" pelo nome escolhido
-function substituiNome() {
-    perguntas.forEach(p => {
-        p.enunciado = p.enunciado.replace(/você/g, nome);
-    });
-}
-substituiNome();
+botaoIniciar.addEventListener('click', iniciaJogo);
 
-// Inicia o jogo
-botaoIniciar.addEventListener("click", () => {
-    telaInicial.style.display = "none";
-    caixaPrincipal.style.display = "block";
+function iniciaJogo() {
     atual = 0;
     historiaFinal = "";
+    telaInicial.style.display = 'none';
+    caixaPerguntas.classList.remove("mostrar");
+    caixaAlternativas.classList.remove("mostrar");
+    caixaResultado.classList.remove("mostrar");
     mostraPergunta();
-});
+}
 
-// Mostra pergunta
 function mostraPergunta() {
     if (atual >= perguntas.length) {
         mostraResultado();
         return;
     }
-
-    const perguntaAtual = perguntas[atual];
+    perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
-    caixaAlternativas.innerHTML = "";
-
-    perguntaAtual.alternativas.forEach(alternativa => {
-        const botao = document.createElement("button");
-        botao.textContent = alternativa.texto;
-        botao.addEventListener("click", () => {
-            historiaFinal += aleatorio(alternativa.afirmacao) + " ";
-            if (alternativa.proxima !== undefined) {
-                atual = alternativa.proxima;
-                mostraPergunta();
-            } else {
-                mostraResultado();
-            }
-        });
-        caixaAlternativas.appendChild(botao);
-    });
+    caixaAlternativas.textContent = "";
+    mostraAlternativas();
 }
 
-// Mostra resultado final
+function mostraAlternativas() {
+    for (const alternativa of perguntaAtual.alternativas) {
+        const botaoAlternativas = document.createElement("button");
+        botaoAlternativas.textContent = alternativa.texto;
+        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
+        caixaAlternativas.appendChild(botaoAlternativas);
+    }
+}
+
+function respostaSelecionada(opcaoSelecionada) {
+    const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
+    historiaFinal += afirmacoes + " ";
+    if (opcaoSelecionada.proxima !== undefined) {
+        atual = opcaoSelecionada.proxima;
+    } else {
+        mostraResultado();
+        return;
+    }
+    mostraPergunta();
+}
+
 function mostraResultado() {
     caixaPerguntas.textContent = `Em 2049, ${nome}`;
     textoResultado.textContent = historiaFinal;
-    caixaAlternativas.innerHTML = "";
+    caixaAlternativas.textContent = "";
     caixaResultado.classList.add("mostrar");
+    botaoJogarNovamente.addEventListener("click", jogaNovamente);
 }
 
-// Botão de jogar novamente
-botaoJogarNovamente.addEventListener("click", () => {
+function jogaNovamente() {
     atual = 0;
     historiaFinal = "";
     caixaResultado.classList.remove("mostrar");
     mostraPergunta();
-});
+}
+
+function substituiNome() {
+    for (const pergunta of perguntas) {
+        pergunta.enunciado = pergunta.enunciado.replace(/você/g, nome);
+    }
+}
+
+substituiNome();
